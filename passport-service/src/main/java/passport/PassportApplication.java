@@ -10,6 +10,7 @@ import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.cloud.netflix.feign.FeignClient;
+import org.springframework.context.annotation.Bean;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
@@ -24,10 +25,10 @@ import java.util.List;
 @SpringBootApplication
 @EnableEurekaClient
 @EnableFeignClients
-public class Application {
+public class PassportApplication {
 
     public static void main(String[] args) {
-        new SpringApplicationBuilder(Application.class)
+        new SpringApplicationBuilder(PassportApplication.class)
                 .web(false)
                 .run(args);
     }
@@ -48,29 +49,6 @@ class DiscoveryClientExample implements CommandLineRunner {
             System.out.println(ToStringBuilder.reflectionToString(s));
         });
     }
-}
-
-@Component
-class RestTemplateExample implements CommandLineRunner {
-
-    @Autowired
-    private RestTemplate restTemplate;
-
-    @Override
-    public void run(String... strings) throws Exception {
-        // use the "smart" Eureka-aware RestTemplate
-        ResponseEntity<List<Bookmark>> exchange =
-                this.restTemplate.exchange(
-                        "http://bookmark-service/{userId}/bookmarks",
-                        HttpMethod.GET,
-                        null,
-                        new ParameterizedTypeReference<List<Bookmark>>() {
-                        },
-                        (Object) "mstine");
-
-        exchange.getBody().forEach(System.out::println);
-    }
-
 }
 
 @Component

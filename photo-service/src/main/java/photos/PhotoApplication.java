@@ -23,10 +23,10 @@ import java.net.URI;
 
 @SpringBootApplication
 @EnableEurekaClient
-public class Application {
+public class PhotoApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(PhotoApplication.class, args);
     }
 }
 

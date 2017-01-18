@@ -12,7 +12,7 @@
 
     <artifactId>bookmark-service</artifactId>
     <properties>
-        <start-class>bookmarks.Application</start-class>
+        <start-class>bookmarks.BookmarkApplication</start-class>
     </properties>
 
     <packaging>jar</packaging>

@@ -13,7 +13,7 @@
     <artifactId>eureka-service</artifactId>
     <packaging>jar</packaging>
     <properties>
-        <start-class>registry.Application</start-class>
+        <start-class>registry.EurekaApplication</start-class>
     </properties>
 
     <dependencies>

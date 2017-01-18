@@ -11,7 +11,7 @@
     <artifactId>photo-service</artifactId>
     <packaging>jar</packaging>
     <properties>
-        <start-class>photos.Application</start-class>
+        <start-class>photos.PhotoApplication</start-class>
     </properties>
     <dependencies>
         <dependency>

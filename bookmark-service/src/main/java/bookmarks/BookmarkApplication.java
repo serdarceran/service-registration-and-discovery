@@ -18,10 +18,10 @@ import java.util.List;
 
 @SpringBootApplication
 @EnableEurekaClient
-public class Application {
+public class BookmarkApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(BookmarkApplication.class, args);
     }
 
     @Bean
