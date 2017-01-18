@@ -81,7 +81,8 @@ class FeignExample implements CommandLineRunner {
 
     @Override
     public void run(String... strings) throws Exception {
-        this.bookmarkClient.getBookmarks("jlong").forEach(System.out::println);
+        System.out.print("Getting Bookmarks...");
+        this.bookmarkClient.getBookmarks("serdar").forEach(System.out::println);
     }
 }
 
